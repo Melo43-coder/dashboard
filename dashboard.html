@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Controle - Sistema de Gerenciamento</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <aside class="dashboard">
+    <div class="user-info">
+      <p>OLÁ, <span id="userName">Usuário</span></p>
+    </div>
+    <nav class="side-nav">
+      <ul>
+        <li><a href="#" onclick="carregarArea('tarefas')">Tarefas Únicas</a></li>
+        <li><a href="#" onclick="carregarArea('atraso')">Parcelas em Atraso</a></li>
+        <li><a href="#" onclick="carregarArea('renovacoes')">Renovações</a></li>
+        <li><a href="#" onclick="carregarArea('aplices')">Apólices Pendentes</a></li>
+        <li><a href="#" onclick="carregarArea('sinistros')">Sinistros</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="container">
+    <header>
+      <h2 id="panelTitle">Painel de Controle</h2>
+      <div class="actions hidden" id="actions-panel">
+        <input type="file" id="fileInput" accept=".xlsx">
+        <button class="btn" id="btnCarregar" onclick="carregarPlanilha()">Carregar Dados</button>
+        <button class="btn" id="btnExcluir" onclick="excluirDados()">Excluir Dados</button>
+      </div>
+    </header>
+    <div id="dadosContainer" class="dados-container"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.17.0/dist/xlsx.full.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
